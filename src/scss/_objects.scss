@@ -1,0 +1,22 @@
+@use "_settings.scss" as *;
+
+.header {
+  
+  background: $gradient;
+  color: $white;
+  height: 60px;
+  @extend %centralize-with-flex;
+  
+  position: relative;
+
+  &__title {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 70px;
+  }
+  
+}

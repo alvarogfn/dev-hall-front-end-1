@@ -1,6 +1,8 @@
 // here we have reset's css and normalizes
 @use "_generics.scss";
-// here we have only tag generic stylesheet
-@use "_base.scss";
-// here we have our components of interface
+
+// here we have the block's of the interface
+@use "_objects.scss";
+
+// here we have our components of the interface
 @use "_components.scss";

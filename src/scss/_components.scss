@@ -1,0 +1,16 @@
+@use "_settings.scss"as *;
+
+.list {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 10px;
+
+  &__item {
+    height: 40px;
+    width: 40px;
+  }
+  &__anchor {
+    display: block;
+    text-indent: -9999px;
+  }
+}
