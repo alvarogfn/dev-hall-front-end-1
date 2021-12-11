@@ -15,7 +15,7 @@ const inputDirName = "src";
 
 const path = {
   style: {
-    input: `./${inputDirName}/scss/styles.scss`,
+    input: `./${inputDirName}/scss/**/*.scss`,
     output: `./${outputDirName}/css`,
   },
   html: {
@@ -35,7 +35,6 @@ const path = {
 function css() {
   return gulp
     .src(path.style.input)
-    .pipe(rename({ basename: "styles", suffix: ".min" }))
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -47,6 +46,7 @@ function css() {
         cascade: false,
       })
     )
+    .pipe(rename({ basename: "styles", suffix: ".min" }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(path.style.output));
 }
