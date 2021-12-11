@@ -1,0 +1,48 @@
+{
+  "name": "dev-hall-front-end-1",
+  "version": "1.0.0",
+  "description": "Nós, do servidor do discord Dev Hall, criamos este desafio para você testar suas habilidades como desenvolvedor Front End. Este é o nosso primeiro desafio, onde vamos pedir para vocês montarem o projeto Figma que geramos aqui:  [https://www.figma.com/file/oAzrbFOra5NuygvnsLZBcv/Desafio-Front-end?node-id=0%3A1](https://www.figma.com/file/oAzrbFOra5NuygvnsLZBcv/Desafio-Front-end?node-id=0%3A1)",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "gulp build",
+    "deploy": "gh-pages -d dist",
+    "server": "live-server --port=3000 --host=192.168.0.121 --open=docs",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvarogfn/dev-hall-front-end-1.git"
+  },
+  "author": "alvarogfn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvarogfn/dev-hall-front-end-1/issues"
+  },
+  "homepage": "https://github.com/alvarogfn/dev-hall-front-end-1#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "htmlmin": "^0.0.7",
+    "jslint": "^0.12.1",
+    "live-server": "^1.2.1",
+    "sass": "^1.44.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "gh-pages": "^3.2.3",
+    "gulp-babel": "^8.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "IE 11",
+    "last 3 versions"
+  ]
+}
