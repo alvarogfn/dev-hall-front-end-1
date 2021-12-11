@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/_a.scss","styles.min.scss"],"names":[],"mappings":"AAAA,SACE,SAAA,CCCF,OACE,qBAAA,CACA,4BAAA,CAAA,wBAAA,CAAA,oBAAA,CACA,SAAA","file":"styles.min.css","sourcesContent":[".suspect {\r\n  color: red;\r\n}\r\n","@use \"./components/a\" as img;\r\n\r\nheader {\r\n  background-color: blue;\r\n  transform: scale(1.1);\r\n  color: red;\r\n}\r\n"]}
