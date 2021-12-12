@@ -1,16 +1,162 @@
 @use "_settings.scss"as *;
 
+.section {
+  @extend %padding-section-responsive;
+
+  &__title {
+    @extend %font-bold;
+    font-size: 2.1rem;
+
+    &--banner {
+      order: 2;
+      font-size: 1.8rem;
+      @extend %font-bold;
+      margin-bottom: 85px;
+    }
+
+    &--about {
+      margin-bottom: 1.5rem;
+    }
+
+    &--contact {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    &--banner {
+      order: 1;
+      font-size: 1.1rem;
+      @extend %font-normal;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    &--banner {
+      order: 3;
+      @include button-style("small", $pink);
+    }
+
+    &--contact {
+      @include button-style("small", $green);
+    }
+  }
+
+  &__paragraph {
+    @extend %font-normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+}
+
 .list {
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 10px;
+  column-gap: 40px;
 
   &__item {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
+
   &__anchor {
     display: block;
     text-indent: -9999px;
+
+    &--linkedin {
+      background-image: url("../assets/linkedin.svg");
+    }
+
+    &--instagram {
+      background-image: url("../assets/instagram.svg");
+    }
+
+    &--twitter {
+      background-image: url("../assets/twitter.svg");
+    }
+
+    background-size: cover;
+    background-position: center center;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 35px;
+
+  &__label {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    position: relative;
+  }
+
+  &__legend {
+    order: 1;
+    font-size: 0.775rem;
+    margin-bottom: 7.5px;
+
+    @extend %font-bold;
+    text-transform: capitalize;
+
+    transition: 200ms;
+
+    color: $gray-2;
+  }
+
+  &__input {
+    order: 2;
+    border: 1px solid $gray-4;
+    border-radius: 8px;
+    height: 51px;
+    font-size: 1.1rem;
+    text-indent: 15px;
+
+    color: $gray-1;
+
+    transition: 200ms;
+
+    &::placeholder {
+      color: $gray-3;
+    }
+
+    &:focus {
+      border-color: $green;
+
+      ~.form__legend {
+        color: $green;
+      }
+    }
+
+    &:placeholder-shown:invalid ~ .form__error {
+      display: none;
+    }
+
+    &:not(:placeholder-shown):invalid ~ .form_error {
+      display: block;
+    }
+
+    &:valid ~ .form__error {
+      display: none;
+    }
+
+  }
+
+  &__error {
+    position: absolute;
+    color: $gray-2;
+    font-size: 0.8rem;
+    bottom: calc(-0.8rem - 5px);
+  }
+
+  &__button {
+    align-self: flex-end;
   }
 }

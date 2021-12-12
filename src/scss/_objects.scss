@@ -1,12 +1,10 @@
-@use "_settings.scss" as *;
+@use "_settings.scss"as *;
 
 .header {
-  
   background: $gradient;
   color: $white;
   height: 60px;
   @extend %centralize-with-flex;
-  
   position: relative;
 
   &__title {
@@ -16,7 +14,62 @@
 
   &__nav {
     position: absolute;
-    top: 70px;
+    top: 90px;
   }
-  
+
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 30px;
+
+  &__section {
+    min-height: 450px;
+    max-height: 568px;
+    @extend %padding-section-responsive;
+  }
+}
+
+.section {
+  &--banner {
+    color: white;
+
+    flex-basis: calc(100vh - 60px);
+
+    background-image: url("../assets/lading-page-wallpaper.webp");
+    @extend %background-center-cover;
+    background-attachment: fixed;
+
+    box-shadow: inset 0 0 0 150vw rgba($color: #000000, $alpha: 0.8);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  &--about {
+    flex-basis: calc(300px + 474px);
+    max-height: initial;
+    background-image: url("../assets/Rectangle.webp"), url("../assets/people-thinking.webp");
+    background-position: bottom center, bottom center;
+    background-size: 100% 125px, 404px 466px;
+    background-repeat: no-repeat, no-repeat;
+
+    color: $gray-1;
+  }
+
+  &--contact {
+    color: $gray-1;
+  }
+}
+
+.footer {
+  height: 55px;
+  background-color: $gray-5;
+  @extend %centralize-with-flex;
+  flex-flow: column nowrap;
+  font-size: 0.71rem;
+  row-gap: 7.5px;
+  color: $gray-1;
 }

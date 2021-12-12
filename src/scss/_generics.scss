@@ -1,4 +1,4 @@
-@use "./settings" as *;
+@use "./settings"as *;
 
 * {
   margin: 0;
@@ -13,11 +13,18 @@ a {
 button {
   background-color: initial;
   border: initial;
-  cursor: none;
+  cursor: pointer;
   outline: none;
 }
 
-ul, li, ol {
+input {
+  border: none;
+  outline: none;
+}
+
+ul,
+li,
+ol {
   list-style: none;
   display: inline;
 }

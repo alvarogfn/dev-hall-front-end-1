@@ -41,7 +41,7 @@
     <!-- end-->
 
     <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
-    <link rel="apple-touch-icon" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/favicon.ico" />
 
     <link rel="stylesheet" href="./css/styles.min.css" />
 
@@ -61,7 +61,7 @@
           <ul class="list">
             <li class="list__item">
               <a
-                class="list__anchor"
+                class="list__anchor list__anchor--linkedin"
                 href="https://br.linkedin.com/"
                 target="_blank"
                 rel="external"
@@ -70,7 +70,7 @@
             </li>
             <li class="list__item">
               <a
-                class="list__anchor"
+                class="list__anchor list__anchor--instagram"
                 href="https://www.instagram.com/?hl=pt-br"
                 target="_blank"
                 rel="external"
@@ -79,7 +79,7 @@
             </li>
             <li class="list__item">
               <a
-                class="list__anchor"
+                class="list__anchor list__anchor--twitter"
                 href="https://twitter.com/"
                 target="_blank"
                 rel="external"
@@ -89,16 +89,23 @@
           </ul>
         </nav>
       </header>
-      <main>
-        <section>
-          <h2>Seu projeto pronto na velocidade da luz</h2>
-          <p>Desenvolvedores prontos para ação</p>
-          <a href="#">Peça uma reunião</a>
+
+      <main class="main">
+        <section class="main__section section--banner">
+          <h2 class="section__title section__title--banner">
+            Seu projeto pronto na velocidade da luz
+          </h2>
+          <h3 class="section__subtitle section__subtitle--banner">
+            Desenvolvedores prontos para ação
+          </h3>
+          <a class="section__button section__button--banner" href="#"
+            >Peça uma reunião</a
+          >
         </section>
 
-        <section>
-          <h2>Nossa iniciativa</h2>
-          <p>
+        <section class="main__section section--about">
+          <h2 class="section__title section__title--about">Nossa iniciativa</h2>
+          <p class="section__paragraph about__paragraph">
             Somos desenvolvedores que se dedicam a fazer projetos perfeitos e
             entregar valor para todos os seus clientes. Gostamos de ver clientes
             satisfeitos com projetos feitos com carinho, atenção e qualidade
@@ -106,35 +113,58 @@
           </p>
         </section>
 
-        <section>
-          <h2>Mande um oi, ligaremos pra você!</h2>
+        <section class="main__section section--contact">
+          <h2 class="section__title section__title--contact">
+            Mande um oi, ligaremos pra você!
+          </h2>
 
-          <form method="post">
-            <fieldset>
-              <legend>
-                Preencha seus dados para que a gente possa entrar em contato.
-              </legend>
-              <label for="name">
-                <span>Nome completo</span>
-                <input type="text" id="name" name="name" required />
-              </label>
-              <label for="tel">
-                <span>Whatsapp</span>
-                <input
-                  type="tel"
-                  id="tel"
-                  name="tel"
-                  pattern="^\([0-9]{2}\) [0-9]{5} [0-9]{4}"
-                  required
-                />
-              </label>
-            </fieldset>
-            <button type="submit">Peça uma reunião</button>
+          <form class="form" method="post">
+            <h3 class="form__title section__paragraph">
+              Preencha seus dados para que a gente possa entrar em contato.
+            </h3>
+
+            <label class="form__label" for="name">
+              <input
+                class="form__input"
+                type="text"
+                id="name"
+                placeholder="Ex: Mateus Ávila Isidoro"
+                name="name"
+                pattern="^([^0-9]*)"
+                required
+              />
+              <span class="form__legend">Nome completo</span>
+              <p class="form__error">Não pode conter números.</p>
+            </label>
+
+            <label class="form__label" for="tel">
+              <input
+                class="form__input"
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="(99) 99999 9999"
+                title="Deve seguir o padrão (38) 99999 9999"
+                pattern="^\([0-9]{2}\) [0-9]{5} [0-9]{4}"
+                required
+              />
+              <span class="form__legend">Whatsapp</span>
+              <p class="form__error">Deve seguir o padrão (38) 99999 9999</p>
+            </label>
+
+            <button
+              class="form__button section__button section__button--contact"
+              type="submit"
+            >
+              Peça uma reunião
+            </button>
           </form>
         </section>
-        <footer>
-          <p>Desafio 1 - front-end iniciante</p>
-          <p>Iniciativa DEV HALL</p>
+        <footer class="footer">
+          <p class="footer__paragraph">Desafio 1 - front-end iniciante</p>
+          <p class="footer__paragraph">
+            Iniciativa <strong>TECH PEOPLE</strong>
+          </p>
         </footer>
       </main>
     </div>
