@@ -4,7 +4,6 @@ $gray-2: #666666;
 $gray-3: #bbbbbb;
 $gray-4: #cdcdcd;
 $gray-5: #eaeaea;
-$opacity: opacify(#000000, 0.8);
 $green: #10ac84;
 $pink: #ee5253;
 $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
@@ -32,39 +31,37 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
   background-position: center center;
 }
 
-%padding-section-responsive {
-  padding: 15px;
-}
+@mixin padding-section-responsive() {
+  padding: calc(15px + 2vw);
 
-@mixin font-style($size, $isBold: false) {
-  font-size: $size;
-
-  @if $isBold==true {
-    @extend %font-bold;
-  }
-
-  @else {
-    @extend %font-normal;
+  @media screen and (min-width: 768px) {
+    padding: calc(45px + 2vw);
   }
 }
 
 @mixin button-style($type, $color) {
   @if $type=="big" {
-    width: 304px;
+    width: 290px;
     height: 60px;
+
+    font-size: 1.3rem;
+
   }
 
   @else if $type=="small" {
     width: 222px;
     height: 46px;
+
+    font-size: 1.1rem;
   }
 
   background-color: $color;
   border-radius: 0.4rem;
   color: white;
-  font-size: 1.1rem;
 
-  @extend %centralize-with-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   transition: 200ms;
 

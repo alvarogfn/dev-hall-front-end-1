@@ -1,7 +1,7 @@
 @use "_settings.scss"as *;
 
 .section {
-  @extend %padding-section-responsive;
+  @include padding-section-responsive;
 
   &__title {
     @extend %font-bold;
@@ -135,15 +135,15 @@
       }
     }
 
-    &:placeholder-shown:invalid ~ .form__error {
+    &:placeholder-shown:invalid~.form__error {
       display: none;
     }
 
-    &:not(:placeholder-shown):invalid ~ .form_error {
+    &:not(:placeholder-shown):invalid~.form_error {
       display: block;
     }
 
-    &:valid ~ .form__error {
+    &:valid~.form__error {
       display: none;
     }
 
@@ -158,5 +158,61 @@
 
   &__button {
     align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    &__subtitle {
+      font-size: 2rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+
+      &--banner {
+        font-size: 3.4rem;
+      }
+
+      &--about {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__paragraph {
+      font-size: 1.35rem;
+
+      &--about {
+        max-width: 450px;
+      }
+    }
+
+    &__button {
+      &--contact {
+        @include button-style("big", $green);
+
+      }
+
+      &--banner {
+        @include button-style("big", $pink);
+      }
+    }
+  }
+
+  .list {
+    &__item {
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  .form {
+    &__legend {
+      font-size: 1rem;
+    }
+
+    &__input {
+      width: 90%;
+    }
   }
 }
