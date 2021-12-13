@@ -1,3 +1,7 @@
+@use "sass:math";
+
+
+// variables
 $white: #ffffff;
 $gray-1: #333333;
 $gray-2: #666666;
@@ -7,6 +11,8 @@ $gray-5: #eaeaea;
 $green: #10ac84;
 $pink: #ee5253;
 $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
+
+// placeholders
 
 %font-bold {
   font-family: Roboto, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
@@ -31,11 +37,31 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
   background-position: center center;
 }
 
+// functions and mixins
+
+@function px-to-rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
 @mixin padding-section-responsive() {
-  padding: calc(15px + 2vw);
+  padding: 15px calc(15px + 2vw);
 
   @media screen and (min-width: 768px) {
-    padding: calc(45px + 2vw);
+    padding: 40px calc(45px + 2vw);
+  }
+
+  @media screen and (min-width: 1156px) {
+    padding-left: calc(25px + 5vw);
+    padding-right: calc(35px + 2vw);
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: calc(155px + 5vw);
+    padding-right: calc(45px + 2vw);
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -44,7 +70,7 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
     width: 290px;
     height: 60px;
 
-    font-size: 1.3rem;
+    font-size: px-to-rem(18px);
 
   }
 
@@ -52,7 +78,7 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
     width: 222px;
     height: 46px;
 
-    font-size: 1.1rem;
+    font-size: px-to-rem(22px);
   }
 
   background-color: $color;
@@ -71,5 +97,19 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
 
   &:active {
     background-color: darken($color, 20%);
+  }
+}
+
+// keyframes 
+
+@keyframes drop-from-input {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }

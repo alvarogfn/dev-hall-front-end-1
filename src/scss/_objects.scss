@@ -1,5 +1,10 @@
 @use "_settings.scss"as *;
 
+.app {
+  max-width: 3440px; // ultra-wide???
+  margin: 0 auto;
+}
+
 .header {
   background: $gradient;
   color: $white;
@@ -10,7 +15,7 @@
   &__title {
     @extend %font-bold;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: px-to-rem(20px);
   }
 
   &__nav {
@@ -36,7 +41,8 @@
   &--banner {
     color: white;
 
-    flex-basis: calc(100vh - 60px);
+    height: 100vh;
+    width: 100%;
 
     background-image: url("../assets/lading-page-wallpaper.webp");
     @extend %background-center-cover;
@@ -50,7 +56,7 @@
   }
 
   &--about {
-    flex-basis: calc(300px + 474px);
+    height: calc(300px + 474px);
     max-height: initial;
     background-image: url("../assets/Rectangle.webp"), url("../assets/people-thinking.webp");
     background-position: bottom center, bottom center;
@@ -70,7 +76,7 @@
   background-color: $gray-5;
   @extend %centralize-with-flex;
   flex-flow: column nowrap;
-  font-size: 0.71rem;
+  font-size: px-to-rem(11px);
   row-gap: 7.5px;
   color: $gray-1;
 }
@@ -78,6 +84,10 @@
 
 
 @media screen and (min-width: 768px) {
+  .main__section {
+    max-height: initial;
+  }
+
   .header {
     position: static;
 
@@ -89,18 +99,11 @@
     height: 70px;
 
     &__title {
-      font-size: 1.45rem;
+      font-size: px-to-rem(25px);
     }
 
     &__nav {
       position: static;
-    }
-  }
-
-  .main {
-    &__section {
-      min-height: 450px;
-      max-height: 568px;
     }
   }
 
@@ -110,13 +113,54 @@
     }
 
     &--about {
-      flex-basis: calc(1200px + 474px);
-      background-position: bottom center, bottom right;
+      height: 500px;
+      background-position: bottom center, 95% 100%;
     }
   }
 
   .footer {
     height: 70px;
-    font-size: 1rem;
+    font-size: px-to-rem(13px);
+  }
+}
+
+@media screen and (min-width: 1156px) {
+
+  .main {
+    &__section {
+      min-height: initial;
+      max-height: initial;
+    }
+  }
+
+  .section {
+    &--about {
+      flex-basis: initial;
+      background-position: bottom center, 75% 100%;
+      align-items: center;
+    }
+
+    &--contact {
+      min-height: 350px;
+    }
+  }
+
+  .footer {
+    height: 70px;
+    font-size: px-to-rem(13px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    height: 80px;
+
+    &__title {
+      font-size: px-to-rem(30px);
+    }
+  }
+
+  .section--banner {
+    padding-left: calc(15px + 2vw);
   }
 }
