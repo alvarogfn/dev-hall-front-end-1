@@ -8,8 +8,9 @@ $gray-2: #666666;
 $gray-3: #bbbbbb;
 $gray-4: #cdcdcd;
 $gray-5: #eaeaea;
-$green: #10ac84;
-$pink: #ee5253;
+// Background and foreground colors do not have a sufficient contrast ratio.
+$green: darken(#10ac84, 10%);
+$pink: darken(#ee5253, 10%);
 $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
 
 // placeholders
@@ -100,16 +101,4 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
   }
 }
 
-// keyframes 
-
-@keyframes drop-from-input {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
+// keyframes

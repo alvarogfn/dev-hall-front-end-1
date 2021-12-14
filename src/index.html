@@ -74,7 +74,7 @@
                 class="list__anchor list__anchor--linkedin"
                 href="https://br.linkedin.com/"
                 target="_blank"
-                rel="external"
+                rel="noreferrer"
                 >Linkedin</a
               >
             </li>
@@ -83,7 +83,7 @@
                 class="list__anchor list__anchor--instagram"
                 href="https://www.instagram.com/?hl=pt-br"
                 target="_blank"
-                rel="external"
+                rel="noreferrer"
                 >Instagram</a
               >
             </li>
@@ -92,7 +92,7 @@
                 class="list__anchor list__anchor--twitter"
                 href="https://twitter.com/"
                 target="_blank"
-                rel="external"
+                rel="noreferrer"
                 >Twitter</a
               >
             </li>
@@ -141,10 +141,10 @@
                 placeholder="Ex: Mateus Ávila Isidoro"
                 name="name"
                 pattern="^([^0-9]*)"
+                title="Não pode conter números."
                 required
               />
               <span class="form__legend">Nome completo</span>
-              <p class="form__error">Não pode conter números.</p>
             </label>
 
             <label class="form__label" for="tel">
@@ -159,7 +159,6 @@
                 required
               />
               <span class="form__legend">Whatsapp</span>
-              <p class="form__error">Deve seguir o padrão (38) 99999 9999</p>
             </label>
 
             <button
@@ -173,7 +172,16 @@
         <footer class="footer">
           <p class="footer__paragraph">Desafio 1 - front-end iniciante</p>
           <p class="footer__paragraph">
-            Iniciativa <strong>TECH PEOPLE</strong>
+            Iniciativa
+            <strong
+              ><a
+                href="https://discord.gg/Zbq2RucXep"
+                title="Discord da Tech People"
+                target="_blank"
+                translate="no"
+                >TECH PEOPLE</a
+              ></strong
+            >
           </p>
         </footer>
       </main>
