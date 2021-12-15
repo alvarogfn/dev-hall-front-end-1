@@ -1,4 +1,6 @@
 const submitForm = () => {
+  const get = document.getElementById.bind(document);
+
   const manageForm = ({ target }) => {
     form[target.id] = target.value;
     validateForm(form.name, form.tel);
@@ -8,11 +10,16 @@ const submitForm = () => {
     const nameRegex = RegExp(/^[A-zÀ-ú '´]*$/);
     const telRegex = RegExp(/^\([0-9]{2}\) [0-9]{5} [0-9]{4}/);
 
+    const buttonElement = get("submit");
+    
     if (name.length == 0 || tel.length == 0) {
+      buttonElement.setAttribute("disabled", true);
       return false;
     } else if (nameRegex.test(name) && telRegex.test(tel)) {
+      buttonElement.removeAttribute("disabled");
       return true;
     } else {
+      buttonElement.setAttribute("disabled", true);
       return false;
     }
   };
@@ -49,8 +56,6 @@ const submitForm = () => {
     }
   };
 
-  const get = document.getElementById.bind(document);
-
   const formElement = get("form");
   formElement.onsubmit = (e) => e.preventDefault();
 
@@ -64,7 +69,11 @@ const submitForm = () => {
     tel: telElement.value,
   };
 
-  ["keyup", "change", "blur"].forEach((action) => {
+  validateForm(form.name, form.tel);
+
+  const actions = ["keyup", "change", "blur"];
+
+  actions.forEach((action) => {
     nameElement.addEventListener(action, (e) => manageForm(e));
     telElement.addEventListener(action, (e) => manageForm(e));
   });
