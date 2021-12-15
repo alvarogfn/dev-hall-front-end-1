@@ -12,10 +12,14 @@
       font-size: px-to-rem(30px);
       @extend %font-bold;
       margin-bottom: 85px;
+      @include appearAnimation("bottom", 600ms, 200ms);
     }
 
     &--about {
       margin-bottom: 1.5rem;
+
+      @include appearAnimation("left", 500ms);
+
     }
 
     &--contact {
@@ -29,6 +33,8 @@
       font-size: px-to-rem(18px);
       @extend %font-normal;
       margin-bottom: 15px;
+
+      @include appearAnimation("bottom", 600ms, 400ms);
     }
   }
 
@@ -36,6 +42,7 @@
     &--banner {
       order: 3;
       @include button-style("small", $pink);
+      @include appearAnimation("bottom", 600ms, 300ms);
     }
 
     &--contact {
@@ -48,6 +55,8 @@
     font-weight: normal;
     font-size: px-to-rem(18px);
     line-height: 2rem;
+
+    @include appearAnimation("left", 500ms);
   }
 }
 
@@ -95,6 +104,11 @@
   flex-flow: column nowrap;
   row-gap: 35px;
 
+  &__title {
+    opacity: 1;
+    animation: initial;
+  }
+
   &__label {
     display: flex;
     flex-flow: column nowrap;
@@ -141,22 +155,13 @@
     }
   }
 
-  &__error {
-    position: absolute;
-    color: $gray-2;
-    font-size: px-to-rem(14px);
-    bottom: calc(-0.8rem - 10px);
-    transition: 200ms;
-    animation: drop-from-input 200ms forwards;
-  }
-
   &__button {
     align-self: flex-end;
   }
 }
 
 .modal {
-  
+
   margin-top: 10px;
   padding: 10px;
 
@@ -178,6 +183,7 @@
   &__title {
     margin-bottom: 10px;
   }
+
   &__content {
     color: $gray-2;
   }

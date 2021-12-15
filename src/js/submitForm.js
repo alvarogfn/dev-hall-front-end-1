@@ -8,7 +8,9 @@ const submitForm = () => {
     const nameRegex = RegExp(/^[A-zÀ-ú '´]*$/);
     const telRegex = RegExp(/^\([0-9]{2}\) [0-9]{5} [0-9]{4}/);
 
-    if (nameRegex.test(name) && telRegex.test(tel)) {
+    if (name.length == 0 || tel.length == 0) {
+      return false;
+    } else if (nameRegex.test(name) && telRegex.test(tel)) {
       return true;
     } else {
       return false;

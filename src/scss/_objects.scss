@@ -68,6 +68,8 @@
   }
 
   &--contact {
+    opacity: 0;
+    @include appearAnimation("right", 500ms);
     color: $gray-1;
   }
 }
@@ -81,8 +83,6 @@
   row-gap: 7.5px;
   color: $gray-1;
 }
-
-
 
 @media screen and (min-width: 768px) {
   .main__section {
@@ -140,6 +140,7 @@
 
   .section {
     &--about {
+      height: 574px;
       flex-basis: initial;
       background-position: bottom center, 75% 100%;
       align-items: center;
