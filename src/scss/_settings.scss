@@ -121,3 +121,14 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
     transform: translateY(0);
   }
 }
+
+@keyframes push-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
