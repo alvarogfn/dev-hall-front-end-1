@@ -57,7 +57,7 @@
   }
 
   &--about {
-    height: calc(400px + 474px);
+    height: calc(300px + 474px);
     max-height: initial;
     background-image: url("../assets/Rectangle.webp"), url("../assets/people-thinking.webp");
     background-position: bottom center, bottom center;
@@ -114,9 +114,10 @@
     }
 
     &--about {
-      height: 500px;
+      height: calc(200px + 474px);
       background-position: bottom center, 95% 100%;
     }
+
     &--contact {
       height: initial;
     }
