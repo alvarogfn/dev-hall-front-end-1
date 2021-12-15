@@ -57,7 +57,7 @@
   }
 
   &--about {
-    height: calc(300px + 474px);
+    height: calc(320px + 474px);
     max-height: initial;
     background-image: url("../assets/Rectangle.webp"), url("../assets/people-thinking.webp");
     background-position: bottom center, bottom center;
@@ -68,6 +68,7 @@
   }
 
   &--contact {
+    max-height: 675px;
     opacity: 0;
     @include appearAnimation("right", 500ms);
     color: $gray-1;
