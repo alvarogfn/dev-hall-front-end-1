@@ -173,12 +173,6 @@
 
   overflow: hidden;
 
-  &__title,
-  &__content {
-    overflow: hidden;
-    text-overflow: clip;
-    white-space: nowrap;
-  }
 
   &__title {
     margin-bottom: 10px;
