@@ -35,10 +35,7 @@
     "sass": "^1.44.0"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "gh-pages": "^3.2.3",
-    "gulp-babel": "^8.0.0"
+    "gh-pages": "^3.2.3"
   },
   "browserslist": [
     "defaults",

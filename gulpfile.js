@@ -6,7 +6,6 @@ const sourcemaps = require("gulp-sourcemaps");
 const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
-const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 
@@ -70,11 +69,6 @@ function js() {
     .src(path.js.input)
     .pipe(sourcemaps.init())
     .pipe(concat("main.js"))
-    .pipe(
-      babel({
-        presets: ["@babel/env"],
-      })
-    )
     .pipe(uglify())
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(path.js.output));

@@ -71,7 +71,7 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
     width: 290px;
     height: 60px;
 
-    font-size: px-to-rem(18px);
+    font-size: px-to-rem(22px);
 
   }
 
@@ -79,7 +79,7 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
     width: 222px;
     height: 46px;
 
-    font-size: px-to-rem(22px);
+    font-size: px-to-rem(18px);
   }
 
   background-color: $color;
@@ -92,13 +92,32 @@ $gradient: linear-gradient(180deg, #ee5253 0%, #d92223 100%);
 
   transition: 200ms;
 
-  &:hover {
+  &:not(:disabled):hover {
+    background-color: darken($color, 5%);
+  }
+
+  &:not(:disabled):active {
     background-color: darken($color, 10%);
   }
 
-  &:active {
-    background-color: darken($color, 20%);
+  &:disabled {
+    filter: grayscale(100%);
+    cursor: not-allowed;
   }
 }
 
 // keyframes
+
+@keyframes drop-down {
+  from {
+    opacity: 0;
+    max-height: 1px;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    max-height: 250px;
+    transform: translateY(0);
+  }
+}
