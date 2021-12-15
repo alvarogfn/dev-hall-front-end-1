@@ -23,3 +23,12 @@ https://alvarogfn.github.io/dev-hall-front-end-1
 - Main - branch raiz (releases)
 - Development - branch de desenvolvimento (updates)
 - gh-pages (deploy)
+
+## 🚗 - RODAR O PROJETO
+
+```
+yarn install
+yarn run server // Abrir servidor local
+yarn run gulp // Compilar gulp
+yarn run deploy // Enviar para o gh-pages
+```
