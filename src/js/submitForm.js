@@ -10,16 +10,16 @@ const submitForm = () => {
     const nameRegex = RegExp(/^[A-zÀ-ú '´]*$/);
     const telRegex = RegExp(/^\([0-9]{2}\) [0-9]{5} [0-9]{4}/);
 
-    const buttonElement = get("submit");
+    // const buttonElement = get("submit");
     
     if (name.length == 0 || tel.length == 0) {
-      buttonElement.setAttribute("disabled", true);
+      // buttonElement.setAttribute("disabled", true);
       return false;
     } else if (nameRegex.test(name) && telRegex.test(tel)) {
-      buttonElement.removeAttribute("disabled");
+      // buttonElement.removeAttribute("disabled");
       return true;
     } else {
-      buttonElement.setAttribute("disabled", true);
+      // buttonElement.setAttribute("disabled", true);
       return false;
     }
   };
